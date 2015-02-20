@@ -1,0 +1,851 @@
+/* === CSS RESET === */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* === End of CSS RESET === */
+
+// Variables
+@textcolor: black;
+@linkcolor: white;
+@linkhover: #f36639;
+@maincolor: #f36639;
+@background: #303030;
+
+//Mixins
+
+.fadeGradient() {
+    background: radial-gradient(rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 100%);
+    background: -webkit-radial-gradient(rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 100%);
+    background: -o-radial-gradient(rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 100%);
+    background: -moz-radial-gradient(rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 100%);
+}
+
+.gradient(@color,@middle){
+    background: @color; /* Old browsers */
+    background: -moz-linear-gradient(top, @color 0%, darken(@color,5%) @middle, darken(@color,10%) 100%); /* FF3.6+ */
+    background: -webkit-linear-gradient(top, @color 0%,darken(@color,5%) @middle,darken(@color,10%) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, @color 0%,darken(@color,5%) @middle,darken(@color,10%) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, @color 0%,darken(@color,5%) @middle,darken(@color,10%) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, @color 0%,darken(@color,5%) @middle,darken(@color,10%) 100%); /* W3C */
+}
+
+.shadow(){
+    box-shadow: 2px 2px 10px black;
+    -webkit-box-shadow: 2px 2px 10px black;
+    -moz-box-shadow: 2px 2px 10px black;
+}
+
+.radius(@px){
+    -webkit-border-radius: @px;
+    -moz-border-radius: @px;
+    border-radius: @px;
+}
+
+.rotate(@degree){
+    transform: rotate(@degree);
+    -ms-transform: rotate(@degree); /* IE 9 */
+    -webkit-transform: rotate(@degree); /* Safari and Chrome */
+}
+
+//Global usage
+
+h1 { font-size: 3.5em; }
+h2 { font-size: 1.875em; line-height: 1; font-family: "oswaldbook", Arial, Helvetica, sans-serif; text-transform: uppercase; }
+h3 { font-size: 1.125em; font-family: "crimsonitalic", "Times New Roman", Times, serif; }
+h4 { font-size: 2em; }
+h5 { font-size: 1.5em; }
+h6 { font-size: 1em; }
+p strong { font-family: "crimsonbold", "Times New Roman", Times, serif; font-weight: normal; }
+
+a {
+    color: @linkcolor;
+
+    &:hover {
+        color: @linkhover;
+    }
+}
+
+body {
+    background: black url(../images/classy_fabric.png);
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
+    font-family: 'Source Code Pro', sans-serif;
+
+    #bodybg {
+        width: 1920px;
+        height: 1200px;
+
+        .fadeGradient();
+    }
+}
+
+
+header{
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 80px;
+    //background: @background;
+    .gradient(lighten(@background,10%),60%);
+    z-index: 10;
+    text-align: center;
+    .shadow();
+
+    #h_title{
+        width: 50%;
+        display: inline-block;
+        padding-top: 20px;
+
+        #logo {
+            width: 250px;
+            margin: 0 auto;
+
+            p {
+                cursor: pointer;
+                text-shadow: 2px 2px 5px black;
+                font-size: 40px;
+
+                &#minilondon {
+                    position: relative;
+                    font-size: 10px;
+                    color: @maincolor;
+                    font-family: 'Happy Monkey', cursive;
+                    top: -5px;
+                    left: 85px;
+
+                    &:hover {
+                        color: white;
+                    }
+
+                }
+            }
+
+
+        }
+    }
+
+    #h_links{
+        width: 50%;
+        padding-top: 30px;
+        display: inline-block;
+        vertical-align: top;
+
+        a {
+            font-size: 15px;
+            text-decoration: none;
+            padding: 5px;
+            text-shadow: 1px 1px 5px @background;
+            //.radius(25px);
+
+            &.active {
+                background-color: @maincolor;
+                .gradient(@maincolor,10%);
+                .radius(25px);
+            }
+
+            &:hover {
+                color: @linkcolor;
+                background-color: @maincolor;
+                .gradient(@maincolor,10%);
+                .radius(25px);
+            }
+        }
+    }
+}
+
+footer {
+    display: none;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 40px;
+    //background: @background;
+    .gradient(@background,40%);
+    z-index: 10;
+    text-align: center;
+
+    div {
+        padding-top: 13px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .shadow();
+}
+
+nav {
+    display: none;
+    position: fixed;
+    z-index: 8;
+    background: rgba(10,10,10, 0.3);
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    .shadow();
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        border: none;
+        text-align: center;
+        font-size: 17px;
+        transition: 0.25s;
+
+        &:hover {
+            color: @linkcolor;
+            background: rgba(48, 48, 48, 1);
+        }
+    }
+}
+
+.wrapper {
+    display: none;
+    div {
+        position: absolute;
+    }
+
+    #background {
+        z-index: -1;
+
+        //size of the background image
+        width: 5742px;
+        height: 3570px;
+
+        //background image
+        background: url(../images/world-map.png);
+
+        //offset to make it start on the ocean
+        top: -900px;
+        left: -1650px;
+    }
+
+    .inner {
+
+        background-color: white;
+        color: @textcolor;
+
+        .shadow();
+        display: none;
+        width: 1000px;
+        height: 450px;
+        .radius(25px);
+
+        .content {
+
+            position: relative;
+            margin: 0 auto;
+            text-align: center;
+
+            h1 {
+                margin: 10px 0 10px 0;
+                text-decoration: underline;
+            }
+
+            p {
+                padding: 20px 0 0 0;
+            }
+
+            div {
+                position: relative;
+                display: block;
+                margin: 0 auto;
+            }
+
+            h2 {
+                line-height: 1;
+                font-family: "oswaldbook", Arial, Helvetica, sans-serif;
+                text-transform: uppercase;
+                display: inline-block;
+                padding: 30px 0 18px 0;
+                font-size: 3em;
+                text-shadow: 2px 2px 5px black;
+            }
+
+
+            .button {
+                margin-top: 40px;
+                padding: 10px;
+                width: 180px;
+                cursor: pointer;
+                border: 2px white solid;
+                background-color: @maincolor;
+                color: white;
+                transition: 0.25s;
+
+                &:hover {
+                    background-color: white;
+                    color: @maincolor;
+                }
+            }
+
+        }
+
+        &.start {
+            display: block;
+            left: -100px;
+            top: -320px;
+
+            background-color: @maincolor;
+            color: white;
+
+            .content {
+                width: 80%;
+
+                p {
+                    font-size: 26px;
+                }
+
+                h2 {
+                    border-bottom: #ffffff solid 4px;
+                }
+            }
+        }
+
+        &.uk {
+            top: -350px;
+            left: 450px;
+            .rotate(90deg);
+            background: rgba(0,0,0,0.2);
+            color: white;
+
+            .content {
+                top: 20px;
+                height: 400px;
+                overflow-y: auto;
+                width: 95%;
+
+                p {
+                    text-shadow: 2px 2px 5px black;
+                }
+
+                img {
+                    margin: 40px 0 40px 0;
+                }
+
+
+            }
+
+            #ukbg {
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,0) url('../images/landing.jpg') no-repeat;
+                background-position: 50%;
+                background-size: 95% 95%;
+
+                .play {
+
+
+                    position: absolute;
+                    left: 40px;
+                    border: 2px white solid;
+                    background-color: rgba(0, 0, 0, 0);
+
+                    &:hover {
+                        background-color: @maincolor;
+                        color: white;
+                        cursor: pointer;
+                    }
+
+
+                    p {
+                        font-size: 25px;
+                        font-weight: bold;
+                        padding: 2px 6px 2px 6px;
+                    }
+                }
+            }
+        }
+
+        &.skorea {
+            display: block;
+            left: 2900px;
+            top: 50px;
+            .rotate(90deg);
+
+            background: rgba(0,0,0,0.2);
+            color: white;
+
+            .content {
+                width: 60%;
+
+                h2 {
+                    border-bottom: black solid 4px;
+                }
+
+                p {
+                    text-shadow: 2px 2px 5px black;
+                    font-size: 30px;
+                    margin-top: 20px;
+                }
+            }
+
+            #skbg {
+
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,0) url('../images/hyundaiback.png') no-repeat;
+                background-position: 50%;
+                background-size: 95% 95%;
+                transition: 1s;
+                .radius(16px);
+
+                &:hover {
+                    background: url('../images/hyundai.jpg') no-repeat;
+                    background-position: 50%;
+                    background-size: 95% 95%;
+                }
+            }
+
+        }
+
+        &.usa1 {
+            top: 0px;
+            left: -1300px;
+
+            background: rgba(0,0,0,0.2);
+            color: white;
+
+            .content {
+                top: 20px;
+                height: 400px;
+                overflow-y: auto;
+                width: 95%;
+
+                p {
+                    text-shadow: 2px 2px 5px black;
+                }
+
+                img {
+                    margin: 40px 0 40px 0;
+                    border: 2px @maincolor solid;
+                }
+
+
+            }
+
+            #us1bg {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,0) url('../images/education.jpg') no-repeat;
+                background-position: 50%;
+                background-size: 95% 95%;
+
+                .play {
+
+
+                    position: absolute;
+                    left: 40px;
+                    border: 2px white solid;
+                    background-color: rgba(0, 0, 0, 0);
+
+                    &:hover {
+                        background-color: @maincolor;
+                        color: white;
+                        cursor: pointer;
+                    }
+
+
+                    p {
+                        font-size: 25px;
+                        font-weight: bold;
+                        padding: 2px 6px 2px 6px;
+                    }
+                }
+            }
+        }
+
+        &.usa2 {
+            width: 400px;
+            height: 400px;
+            top: -90px;
+            left: -550px;
+            .rotate(90deg);
+            background-color: #74BFB8;
+            color: white;
+
+            .content {
+                width: 80%;
+
+                #twitterheader {
+                    p {
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-top: 20px;
+                        font-size: 40px;
+                        cursor: pointer;
+
+                        &:hover{
+                            opacity: 0.8;
+                        }
+
+                    }
+
+                    img {
+                        display: inline-block;
+                        padding: 40px;
+                    }
+
+
+                }
+                .innertwitter{
+                    p:first-child {
+                        padding-bottom: 30px;
+                        border-bottom: 4px white solid;
+                    }
+
+                    p {
+                        font-size: 17px;
+                    }
+
+                    .small {
+                        background: url('../images/clock.png') no-repeat;
+                        background-position: 100px 18px;
+                        padding-bottom: 10px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        &.germany {
+
+            top: -300px;
+            left: 700px;
+
+            display: block;
+            background: rgba(0,0,0,0.2);
+            color: white;
+
+            .content {
+                width: 60%;
+                z-index: 2;
+
+                h2 {
+                    border-bottom: black solid 4px;
+                }
+
+                p {
+                    font-size: 30px;
+                    margin-top: 20px;
+                    text-shadow: 2px 2px 5px black;
+                }
+            }
+
+            #gmbg {
+                z-index: 1;
+
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,0) url('../images/niveaback.jpg') no-repeat;
+                background-position: 50%;
+                background-size: 95% 95%;
+                transition: 1s;
+                .radius(16px);
+
+                &:hover {
+                    background: url('../images/nivea.jpg') no-repeat;
+                    background-position: 50%;
+                    background-size: 95% 95%;
+                }
+            }
+        }
+
+        &.clients {
+            top: 1250px;
+            left: -500px;
+
+            background-color: @maincolor;
+            color: white;
+            text-align: center;
+
+            .content {
+                width: 60%;
+
+                p {
+                    font-size: 35px;
+                    padding: 30px 0 20px 0;
+                }
+
+                h2 {
+                    border-bottom: #ffffff solid 4px;
+                }
+            }
+        }
+
+        &.location {
+            top: 1250px;
+            left: 450px;
+            padding: 0;
+            background: rgba(255,255,255,0.1);
+
+            .circle {
+                background-color: rgba(0,0,0,0);
+                border: 5px solid rgba(243,102,57,0.9);
+
+                border-right: 5px solid rgba(0,0,0,0);
+                border-left: 5px solid rgba(0,0,0,0);
+                border-radius: 50px;
+                box-shadow: 0 0 35px #f36639;
+                width: 40px;
+                height: 40px;
+
+                -moz-animation: spinPulse 1s infinite ease-in-out;
+                -webkit-animation: spinPulse 1s infinite linear;
+
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+
+                &#loc_world_br {
+                    top: 310px;
+                    left: 300px;
+                    z-index: 3;
+                }
+
+                &#loc_world_uk {
+                    top: 20px;
+                    left: 465px;
+                    z-index: 3;
+                }
+
+                &#loc_world_es {
+                    top: -15px;
+                    left: 545px;
+                    z-index: 3;
+                }
+
+                &#loc_br1 {
+                    top: 268px;
+                    left: 358px;
+                    z-index: 3;
+                }
+
+                &#loc_br2 {
+                    top: 110px;
+                    left: 440px;
+                    z-index: 3;
+                    cursor: default;
+                }
+
+                &#loc_uk1 {
+                    top: 135px;
+                    left: 364px;
+                    z-index: 3;
+                }
+
+                &#loc_uk2 {
+                    top: 200px;
+                    left: 230px;
+                    z-index: 3;
+                    cursor: default;
+                }
+
+                &#loc_es1 {
+                    top: 140px;
+                    left: 365px;
+                    z-index: 3;
+                }
+
+                &#loc_es2 {
+                    top: 160px;
+                    left: 440px;
+                    z-index: 3;
+                    cursor: default;
+                }
+            }
+
+            div {
+                border: 15px solid #f36639;
+                top: 35px;
+                left: 85px;
+                width: 800px;
+                height: 350px;
+
+
+                &#br1, &#br2, &#uk1, &#uk2, &#es1, &#es2 {
+                    display: none;
+                }
+
+                &#world {
+                    background: url('../images/location/world.jpg') no-repeat;
+                }
+
+                &#br1 {
+                    background: url('../images/location/br1.jpg') no-repeat;
+                }
+
+                &#br2 {
+                    background: url('../images/location/br2.jpg') no-repeat;
+                }
+
+                &#uk1 {
+                    background: url('../images/location/uk1.jpg') no-repeat;
+                }
+
+                &#uk2 {
+                    background: url('../images/location/uk2.jpg') no-repeat;
+                }
+
+                &#es1 {
+                    background: url('../images/location/es1.jpg') no-repeat;
+                }
+
+                &#es2 {
+                    background: url('../images/location/es2.jpg') no-repeat;
+                }
+            }
+
+            .loc_back{
+                top:0;
+                left:0;
+                z-index: 3;
+                width: 53px;
+                height: 53px;
+                cursor: pointer;
+                background: url('../images/back.png');
+                border: none;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+    }
+
+}
+
+#info {
+    position: fixed;
+    z-index: 12;
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+
+
+    #loading {
+        position: fixed;
+        .gradient(@background,60%);
+
+        width: 100%;
+        height: 100%;
+
+        text-align: center;
+        padding: 30px;
+
+        font-family: 'Aldrich', sans-serif;
+
+        h1 {
+            margin: 300px 0 50px 0;
+            text-shadow: 2px 2px 5px black;
+        }
+
+    }
+
+
+    #instructions {
+        display: none;
+    }
+
+}
+
+//Scrollbar
+.sp-scroll-bar {
+        display: none;
+	position: fixed;
+	z-index: 9999;
+	right: 0;
+	top: 15%;
+	width: 10px;
+	height: 75%;
+	border-radius: 5px;
+
+        &:hover {
+            background: white;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .sp-scroll-handle {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            border-radius: inherit;
+            background: gray;
+            background: rgba(255,255,255, 0.7);
+
+            &:hover {
+                background: rgba(243,102,57,0.7);
+            }
+        }
+}
+
+.sp-canvas {
+    display: none;
+}
+
+@-moz-keyframes spinPulse {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+    };
+}
+
+@-webkit-keyframes spinPulse {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    };
+}

@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'crimsonbold';
+    src: url('../fonts/crimson/crimson-bold-webfont.eot');
+    src: url('../fonts/crimson/crimson-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/crimson/crimson-bold-webfont.woff') format('woff'),
+         url('../fonts/crimson/crimson-bold-webfont.ttf') format('truetype'),
+         url('../fonts/crimson/crimson-bold-webfont.svg#crimsonbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'crimsonbold_italic';
+    src: url('../fonts/crimson/crimson-bolditalic-webfont.eot');
+    src: url('../fonts/crimson/crimson-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/crimson/crimson-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/crimson/crimson-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/crimson/crimson-bolditalic-webfont.svg#crimsonbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'crimsonitalic';
+    src: url('../fonts/crimson/crimson-italic-webfont.eot');
+    src: url('../fonts/crimson/crimson-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/crimson/crimson-italic-webfont.woff') format('woff'),
+         url('../fonts/crimson/crimson-italic-webfont.ttf') format('truetype'),
+         url('../fonts/crimson/crimson-italic-webfont.svg#crimsonitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'crimsonroman';
+    src: url('../fonts/crimson/crimson-roman-webfont.eot');
+    src: url('../fonts/crimson/crimson-roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/crimson/crimson-roman-webfont.woff') format('woff'),
+         url('../fonts/crimson/crimson-roman-webfont.ttf') format('truetype'),
+         url('../fonts/crimson/crimson-roman-webfont.svg#crimsonroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'crimsonsemibold';
+    src: url('../fonts/crimson/crimson-semibold-webfont.eot');
+    src: url('../fonts/crimson/crimson-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/crimson/crimson-semibold-webfont.woff') format('woff'),
+         url('../fonts/crimson/crimson-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/crimson/crimson-semibold-webfont.svg#crimsonsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'crimsonsemibold_italic';
+    src: url('../fonts/crimson/crimson-semibolditalic-webfont.eot');
+    src: url('../fonts/crimson/crimson-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/crimson/crimson-semibolditalic-webfont.woff') format('woff'),
+         url('../fonts/crimson/crimson-semibolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/crimson/crimson-semibolditalic-webfont.svg#crimsonsemibold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'oswaldbold';
+    src: url('../fonts/oswald/oswald-bold-webfont.eot');
+    src: url('../fonts/oswald/oswald-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/oswald/oswald-bold-webfont.woff') format('woff'),
+         url('../fonts/oswald/oswald-bold-webfont.ttf') format('truetype'),
+         url('../fonts/oswald/oswald-bold-webfont.svg#oswaldbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'oswaldlight';
+    src: url('../fonts/oswald/oswald-light-webfont.eot');
+    src: url('../fonts/oswald/oswald-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/oswald/oswald-light-webfont.woff') format('woff'),
+         url('../fonts/oswald/oswald-light-webfont.ttf') format('truetype'),
+         url('../fonts/oswald/oswald-light-webfont.svg#oswaldlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'oswaldbook';
+    src: url('../fonts/oswald/oswald-regular-webfont.eot');
+    src: url('../fonts/oswald/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/oswald/oswald-regular-webfont.woff') format('woff'),
+         url('../fonts/oswald/oswald-regular-webfont.ttf') format('truetype'),
+         url('../fonts/oswald/oswald-regular-webfont.svg#oswaldbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'oswald_stencilregular';
+    src: url('../fonts/oswald/oswald-stencil-webfont.eot');
+    src: url('../fonts/oswald/oswald-stencil-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/oswald/oswald-stencil-webfont.woff') format('woff'),
+         url('../fonts/oswald/oswald-stencil-webfont.ttf') format('truetype'),
+         url('../fonts/oswald/oswald-stencil-webfont.svg#oswald_stencilregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
